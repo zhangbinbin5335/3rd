@@ -88,10 +88,9 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "tencent/TencentOpenAPI.framework/**"
+  # s.source_files  = "tencent/TencentOpenAPI.framework/**"
 
   # s.public_header_files = "Classes/**/*.h"
-
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -113,10 +112,13 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  s.vendored_frameworks = ['tencent/TencentOpenAPI.framework']
 
-  # s.library   = "iconv"
+  # s.framework  = "SomeFramework"
+  s.frameworks = "Security", "SystemConfiguration", "CoreGraphics",
+                 "CoreTelephony"
+
+  s.library   = "iconv", "sqlite3", "stdc++", "z"
   # s.libraries = "iconv", "xml2"
 
 
